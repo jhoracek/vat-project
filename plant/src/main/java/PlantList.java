@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class PlantList {
     private static final String FILE_ITEM_DELIMITER = "\t";
 
-    List<Plant> plantList = new ArrayList<Plant>();
+    List<Plant> plantList = new ArrayList<>();
 
     public void addPlant(Plant plant) {
         plantList.add(plant);
