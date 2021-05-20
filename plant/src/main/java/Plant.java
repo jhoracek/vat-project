@@ -40,22 +40,6 @@ public class Plant {
                         + getPlanted();
     }
 
-    public int getFreqOfWateringInDays() {
-        return freqOfWateringInDays;
-    }
-
-    public LocalDate getLastWatering() {
-        return lastWatering;
-    }
-
-    public void setFreqOfWateringInDays(int freqOfWateringInDays) {
-        this.freqOfWateringInDays = freqOfWateringInDays;
-    }
-
-    public void setLastWatering(LocalDate lastWatering) {
-        this.lastWatering = lastWatering;
-    }
-
     public String getName() {
         return name;
     }
@@ -67,7 +51,6 @@ public class Plant {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
 
     public void setName(String name) {
         this.name = name;
