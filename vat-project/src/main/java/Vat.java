@@ -62,23 +62,24 @@ public class Vat {
         }
         return formatedText;
     }
-        public static Vat parse (String text, String delimiter) throws VatException {
 
-            String[] items = formatText(text).split(delimiter);
-            int numOfItems = items.length;
-            if (numOfItems != 5) {
-                throw new VatException("Incorrect number of items on 1 line. We expect 5 items instead of current " +
-                        numOfItems + " items. Problematic line: " + text);
-            }
+    public static Vat parse(String text, String delimiter) throws VatException {
 
-            String stateCode = items[0];
-            String stateName = items[1];
-            int stdVat = Integer.parseInt(items[2]);
-            float redVat = Float.parseFloat(items[3]);
-            Boolean specVat = Boolean.parseBoolean(items[4]);
-
-            return new Vat(stateCode, stateName, stdVat, redVat, specVat);
+        String[] items = formatText(text).split(delimiter);
+        int numOfItems = items.length;
+        if (numOfItems != 5) {
+            throw new VatException("Incorrect number of items on 1 line. We expect 5 items instead of current " +
+                    numOfItems + " items. Problematic line: " + text);
         }
+
+        String stateCode = items[0];
+        String stateName = items[1];
+        int stdVat = Integer.parseInt(items[2]);
+        float redVat = Float.parseFloat(items[3]);
+        Boolean specVat = Boolean.parseBoolean(items[4]);
+
+        return new Vat(stateCode, stateName, stdVat, redVat, specVat);
     }
+}
 
 
