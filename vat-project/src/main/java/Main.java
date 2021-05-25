@@ -1,5 +1,7 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -24,16 +26,18 @@ public class Main {
 
                 textBelowLine = textBelowLine + " " + list.getVatList(i).getStateCode();
 
-
             }
         }
+
         String[] codesUnderLine = textBelowLine.split(" ");
         Arrays.sort(codesUnderLine);
-        String sortedCodes = Arrays.toString(codesUnderLine);
 
+        List<String> codesUnderLineList = new ArrayList<>();
+        codesUnderLineList.addAll(Arrays.asList(codesUnderLine));
+        codesUnderLineList.remove(0);
 
         System.out.println("====================");
-        System.out.println("Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: "+
-                Arrays.toString(codesUnderLine));
+        System.out.println("Sazba VAT 20 % nebo nižší nebo používají speciální sazbu: " +
+                codesUnderLineList);
     }
 }
