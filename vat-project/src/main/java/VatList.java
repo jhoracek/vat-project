@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,6 +29,19 @@ public class VatList {
             }
         } catch (FileNotFoundException e) {
             throw new VatException("Input file " + pathAndFile + " has not been found: " + e.getLocalizedMessage());
+        }
+    }
+
+    public void writeVatToFile(String outFile) throws VatException {
+        int lineNumber = 0;
+        try (PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(outFile)))) {
+            for (Vat vat : vatList) {
+                String vatAsFileLine = vat.getDescription();
+                writer.println(vatAsFileLine);
+                lineNumber++;
+            }
+        } catch (IOException e) {
+            throw new VatException("Output file" + outFile + " cannot be created. " + e.getLocalizedMessage());
         }
     }
 }

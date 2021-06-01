@@ -1,7 +1,7 @@
-public class Vat {
+public class Vat implements Comparable<Vat> {
     private String stateCode;
     private String stateName;
-    private int stdVat;
+    private Integer stdVat;
     private float redVat;
     private boolean specVat;
 
@@ -25,11 +25,23 @@ public class Vat {
         return stateName;
     }
 
+    @Override
+    public String toString() {
+        return getDescription();
+    }
+
+
+    public String getDescription() {
+        String description = getStateName() + " "
+                + "(" + getStateCode() + ")";
+        return description;
+    }
+
     public void setStateName(String stateName) {
         this.stateName = stateName;
     }
 
-    public int getStdVat() {
+    public Integer getStdVat() {
         return stdVat;
     }
 
@@ -79,6 +91,11 @@ public class Vat {
         Boolean specVat = Boolean.parseBoolean(items[4]);
 
         return new Vat(stateCode, stateName, stdVat, redVat, specVat);
+    }
+
+    @Override
+    public int compareTo(Vat vat) {
+        return stdVat.compareTo(vat.stdVat);
     }
 }
 
