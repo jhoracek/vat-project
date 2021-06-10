@@ -13,6 +13,6 @@ public class MujTest {
     }
     @Test
     public void tretiTest() {
-        int res = 1/0;
+//        int res = 1/0;
     }
 }
