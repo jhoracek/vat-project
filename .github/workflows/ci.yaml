@@ -12,8 +12,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Maven
-        run: ./vat-project/mvnw clean install
-        working-directory: vat-project
+        run: ./lekce7-mvn-a-unit-testy/mvnw clean install
       - name: Archive production artifacts
         if: always()
         uses: actions/upload-artifact@v2        
