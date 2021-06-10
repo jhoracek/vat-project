@@ -13,7 +13,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Maven
-        run: /vat-project/.github/workflows/mvnw clean install
+        run: ./vat-project/mvnw clean install
       - name: Archive production artifacts
         if: always()
         uses: actions/upload-artifact@v2        
