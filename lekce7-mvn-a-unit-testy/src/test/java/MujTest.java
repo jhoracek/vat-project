@@ -11,8 +11,8 @@ public class MujTest {
         MojeTrida mojeTrida = new MojeTrida();
         mojeTrida.run();
     }
-//    @Test
-//    public void tretiTest() {
+    @Test
+    public void tretiTest() {
 //        int res = 1/0;
-//    }
+    }
 }
