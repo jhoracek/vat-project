@@ -13,6 +13,7 @@ jobs:
         with:
           java-version: 11
       - name: Build with Maven
+        working-directory: ./lekce7-mvn-a-unit-testy
         run: ./lekce7-mvn-a-unit-testy/mvnw clean install
       - name: Archive production artifacts
         if: always()
